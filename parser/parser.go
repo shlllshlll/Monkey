@@ -561,7 +561,7 @@ func (p *Parser) parsePrattPrefixExpression() ast.Expression {
 		p.readToken()
 		return &expr
 	case token.STRING:
-		expr := ast.StringLiteral{Token: p.curToken}
+		expr := ast.StringLiteral{Token: p.curToken, Value: p.curToken.Literal}
 		p.readToken()
 		return &expr
 	case token.IDENT:
